@@ -1,0 +1,31 @@
+
+{% extends 'base.html' %}
+
+{% block body %}
+
+    <table class="table table-striped mt-3">
+        <thead>
+        <tr>
+            <th>Melon Name</th>
+            <th>Quantity</th>
+            <th>Price</th>
+            <th>Total</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for melon_dict in list_of_melon_dict %}
+        <tr>
+            <td>{{ melon_dict["Melon name"] }}</td>
+            <td>{{ melon_dict["Quantity"] }}</td>
+            <td>{{ melon_dict["Price"] }}</td>
+            <td>{{ melon_dict["Melon total"] }}</td>
+        </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <h3>Total Cost: ${{ total_cost }}</h3>
+
+    <a href="/checkout" class="btn btn-large btn-primary">Check Out</a>
+
+{% endblock %}
